@@ -6,10 +6,13 @@ on:
       username:
         required: true
         type: string
+      runner-type:
+        required: true
+        type: string
         
 jobs:
   reusable_workflow_job:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner-type }}
     steps:
       - name: Test
         run: |
